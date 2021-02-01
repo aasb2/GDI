@@ -11,11 +11,17 @@ Arthur Abrahao Santos Barbosa (aasb2)
 
 
 
+Jhonatan Kennedy Pires de Andrade (jkpa)
+
+
+
+
 Joao Pedro Ribeiro da Silva Dias (jprsd)
 
 
 
-Jhonatan Kennedy Pires de Andrade (jkpa)
+Marcos Antonio Vital de Lima (mavl)
+
 
 
 
@@ -23,5 +29,4 @@ Rafael Henrique Ayres (jkpa)
 
 
 
-Marcos Antonio Vital de Lima (mavl)
 
