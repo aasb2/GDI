@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{tikz}
+\title{Projeto Logico}
+
+
+\begin{document}
+\maketitle
+%Mapeia a entidade Funcionario e o relacionamento Supervisiona
+\noindent Funcionario(\underline{CPF}, Nome, Salario, DataNasc, Descricao, CEP,Chefe)
+
+\hspace{2cm}Chefe $->$ Funcionario(CPF)
+\newline\newline
+%Mapeia o atributo multivalorado Telefone
+Telefone(\underline{CPF,Telefone})
+
+\hspace{2cm} CPF $->$ Funcionario(CPF)
+\newline\newline
+%Mapeia a entidade Departamento, e o relacionamento Chefia
+Departamento(\underline{Codigo}, Nome, Descricao,[CPF]!)
+
+\hspace{2cm}CPF $->$ Funcionario(CPF)
+\newline\newline
+%Mapeia a entidade distribuidor
+Distribuidor(\underline{CPNJ}, Nome, Email)
+\newline\newline
+%Mapeia a entidade Tecnologia Licensiada, e o relacionamento usa
+TecnologiaLicenciada(\underline{MarcaRegistrada},Descricao,Cedente,ID,Cod,CPF)
+
+\hspace{2cm}ID $->$ Tarefa(ID)
+
+\hspace{2cm}Cod $->$ Projeto(Cod)
+
+\hspace{2cm}CPF $->$ Funcionario(CPF)
+\newline\newline
+%Mapeia a Entidade Projeto de Jogo e o Relacionamento Gerencia
+Projeto(\underline{Cod},Nome,Custo,Status,DataInicio,Prazo,CPF!)
+
+\hspace{2cm}CPF->Funcionario(CPF)
+\newline\newline
+PC(\underline{Cod}, Classificacao, Categoria)
+
+
+\hspace{2cm}Cod $->$ Projeto(Cod)
+\newline\newline
+Mobile(\underline{Cod},Plataforma)
+
+
+\hspace{2cm}Cod $->$ Projeto(Cod)
+\newline\newline
+%Mapeia a entidade Fraca Tarefa e o relacionamento cria 
+Tarefa(\underline{Cod,ID},Descricao,Prazo)
+
+
+\hspace{2cm}Cod $->$ Projeto(Cod)
+\newline\newline
+%Mapeia a entidade associativa executa
+Executa(\underline{ID,Cod,CPF})
+
+\hspace{2cm}ID $->$ Tarefa(ID)
+
+\hspace{2cm}Cod $->$ Projeto(Cod)
+
+\hspace{2cm}CPF $->$ Funcionario(CPF)
+\newline\newline
+%Mapeia o relacionamento trabalha
+Trabalha(\underline{CPF,Codigo,DataAdmin})
+
+\hspace{2cm}CPF $->$ Funcionario(CPF)
+
+\hspace{2cm}Codigo $->$ Departamento(Codigo)
+\newline\newline
+%Mapeia o Relacionamento Negocia
+Negocia(\underline{Cod,CPNJ,Data},CPF)
+
+\hspace{2cm}Cod $->$ Projeto(Cod)
+
+\hspace{2cm}CPNJ $->$ Distribuidor(CPNJ)
+
+\hspace{2cm}CPF $->$ Funcionario(CPF)
+\newline\newline
+
+\end{document}
