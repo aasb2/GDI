@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper]{article}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+{\large Universidade Federal de Pernambuco}\\[0.2cm]
+{\large Centro de Informática}\\[0.2cm]
+{\large Gerenciamento de Dados e Informação}\\[3.7cm]
+{\bf \huge MINIMUNDO}\\[5.cm]
+\end{center}
+{\large {\bf Equipe:}\\[0.2cm]
+Antonio Carlos Gomes Marinho (acgm)\\[0.2cm]
+Arthur Abrahao Santos Barbosa (aasb2)\\[0.2cm]
+Jhonatan Kennedy Pires de Andrade (jkpa)\\[0.2cm]
+Joao Pedro Ribeiro da Silva Dias (jprsd)\\[0.2cm]
+Marcos Antonio Vital de Lima (mavl)\\[0.2cm]
+Rafael Henrique Ayres (jkpa)\\[0.2cm]}
+{\large {\bf Professor:} Robson do Nascimento Fidalgo}\\[2cm]
+\begin{center}
+{\large Recife}\\[0.2cm]
+{\large 2021}\\[0.2cm]
+\end{center}
+\end{titlepage}
+\onehalfspacing
+\section{Descrição do Minimundo}
+
+Um \textbf{funcionário} tem \underline{CPF}, nome, salário, data de nascimento, um ou mais telefones e um endereço (formado por descrição e CEP). Um \textbf{funcionário} pode supervisionar outros \textbf{funcionários}, os quais podem ser supervisionados por um único funcionário.
+
+Ao longo de sua vida na empresa, o \textbf{funcionário} pode trabalhar em vários \textbf{departamentos}, 
+nos quais podem trabalhar vários \textbf{funcionários}. Além do histórico dos \textbf{departamentos} em que cada 
+\textbf{funcionário} trabalhou, pede-se que seja guardado o \underline{código}, nome e a descrição dos \textbf{departamentos}. 
+Um \textbf{funcionário} pode chefiar um \textbf{departamento}, o qual deve ser chefiado por um único \textbf{funcionário.}
+
+Uma \textbf{tarefa} só é definida se fizer parte de um \textbf{projeto de jogos}, sendo identificada através do 
+\underline{código} do \textbf{projeto de jogo} ao qual ela pertence e o seu ID. Possui como atributos ID e descrição. 
+Uma \textbf{tarefa} pode ser executada por vários \textbf{funcionários}, e um \textbf{funcionário} pode executar várias \textbf{tarefas}.
+ Na execução de uma tarefa o(s) \textbf{funcionário(s)} pode(m) ou não utilizar \textbf{Tecnologias Licenciadas}. 
+ Uma \textbf{tecnologia licenciada} possui \underline{marca registrada}, descrição e nome da empresa cedente. 
+
+Todo \textbf{projeto de jogos} tem um \underline{código}, nome, custo, status, data de início e prazo. Há duas subclasses de projeto: \textbf{mobile}, cuja plataforma deve ser especificada; e \textbf{PC}, que possuem categoria e classificação etária. Um \textbf{funcionário} pode gerenciar vários \textbf{projetos de jogos}, que devem ser gerenciados por um único \textbf{funcionário}.
+
+Um \textbf{distribuidor} tem \underline{CNPJ}, nome e e-mail. Ele pode distribuir vários \textbf{projetos de jogos}, que podem ser distribuídos por vários \textbf{distribuidores}. Cada negociação de um jogo com um \textbf{distribuidor} será feita por um \textbf{funcionário} e possuirá um número de contrato, e será identificada através da data em que ocorreu. 
+
+
+\end{document}
