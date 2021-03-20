@@ -24,18 +24,12 @@ Departamento(\underline{Codigo}, Nome, Descricao,[CPF]!)
 Distribuidor(\underline{CPNJ}, Nome, Email)
 \newline\newline
 %Mapeia a entidade Tecnologia Licensiada, e o relacionamento usa
-TecnologiaLicenciada(\underline{MarcaRegistrada},Descricao,Cedente,ID,Cod,CPF)
-
-\hspace{2cm}ID $->$ Tarefa(ID)
-
-\hspace{2cm}Cod $->$ Projeto(Cod)
-
-\hspace{2cm}CPF $->$ Funcionario(CPF)
+TecnologiaLicenciada(\underline{MarcaRegistrada},Descricao,Cedente)
 \newline\newline
 %Mapeia a Entidade Projeto de Jogo e o Relacionamento Gerencia
 Projeto(\underline{Cod},Nome,Custo,Status,DataInicio,Prazo,CPF!)
 
-\hspace{2cm}CPF->Funcionario(CPF)
+\hspace{2cm}CPF $->$ Funcionario(CPF)
 \newline\newline
 PC(\underline{Cod}, Classificacao, Categoria)
 
@@ -48,7 +42,7 @@ Mobile(\underline{Cod},Plataforma)
 \hspace{2cm}Cod $->$ Projeto(Cod)
 \newline\newline
 %Mapeia a entidade Fraca Tarefa e o relacionamento cria 
-Tarefa(\underline{Cod,ID},Descricao,Prazo)
+Tarefa(\underline{Cod,ID},Descricao)
 
 
 \hspace{2cm}Cod $->$ Projeto(Cod)
@@ -56,9 +50,8 @@ Tarefa(\underline{Cod,ID},Descricao,Prazo)
 %Mapeia a entidade associativa executa
 Executa(\underline{ID,Cod,CPF})
 
-\hspace{2cm}ID $->$ Tarefa(ID)
+\hspace{2cm}Cod,ID $->$ Tarefa(Cod,ID)
 
-\hspace{2cm}Cod $->$ Projeto(Cod)
 
 \hspace{2cm}CPF $->$ Funcionario(CPF)
 \newline\newline
@@ -70,7 +63,7 @@ Trabalha(\underline{CPF,Codigo,DataAdmin})
 \hspace{2cm}Codigo $->$ Departamento(Codigo)
 \newline\newline
 %Mapeia o Relacionamento Negocia
-Negocia(\underline{Cod,CPNJ,Data},CPF)
+Negocia(\underline{Cod,CPNJ,Data},CPF!)
 
 \hspace{2cm}Cod $->$ Projeto(Cod)
 
@@ -79,4 +72,7 @@ Negocia(\underline{Cod,CPNJ,Data},CPF)
 \hspace{2cm}CPF $->$ Funcionario(CPF)
 \newline\newline
 
+Usa(\underline{MarcaRegistrada,ID,Cod,CPF})
+
+\hspace{2cm}ID,Cod,CPF$->$Executa(ID,Cod,CPF)
 \end{document}
