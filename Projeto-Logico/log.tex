@@ -50,7 +50,7 @@ Tarefa(\underline{Cod,ID},Descricao)
 %Mapeia a entidade associativa executa
 Executa(\underline{ID,Cod,CPF})
 
-\hspace{2cm}Cod,ID $->$ Tarefa(Cod,ID)
+\hspace{2cm}ID,Cod $->$ Tarefa(ID,Cod)
 
 
 \hspace{2cm}CPF $->$ Funcionario(CPF)
@@ -73,6 +73,8 @@ Negocia(\underline{Cod,CPNJ,Data},CPF!)
 \newline\newline
 
 Usa(\underline{MarcaRegistrada,ID,Cod,CPF})
+
+\hspace{2cm}MarcaRegistrada$->$TecnologiaLicenciada(MarcaRegistrada)
 
 \hspace{2cm}ID,Cod,CPF$->$Executa(ID,Cod,CPF)
 \end{document}
