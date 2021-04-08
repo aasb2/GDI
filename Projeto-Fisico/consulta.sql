@@ -1,0 +1,7 @@
+-- Nome de todos os funcionarios que trabalham no departamento financeiro
+SELECT F.NOME FROM FUNCIONARIO F
+WHERE F.ID IN 
+(SELECT T.ID FROM TRABALHA T
+WHERE T.CODIGO IN
+(SELECT D.CODIGO FROM DEPARTAMENTO D 
+WHERE D.NOME = 'FINANCEIRO')); 
