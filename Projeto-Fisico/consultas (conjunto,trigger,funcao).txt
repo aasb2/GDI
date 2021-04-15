@@ -1,0 +1,41 @@
+--Operacao conjunto
+
+SELECT cpf AS Cadastro FROM funcionario UNION SELECT cnpj FROM distribuidor;
+
+
+SELECT cpf AS cpfs_de_ger FROM funcionario INTERSECT SELECT id FROM projeto;
+
+
+--Função que recebe o CPF do funcionário e retorna o nome dele.
+
+CREATE OR REPLACE FUNCTION retornaNome (cpf_func IN VARCHAR2)
+    RETURN VARCHAR2
+IS
+   nome_func VARCHAR2(50);
+
+BEGIN
+  SELECT nome INTO nome_func
+  FROM funcionario
+  WHERE cpf = cpf_func;
+  RETURN nome_func;
+
+END;
+
+
+--Trigger
+
+CREATE OR REPLACE TRIGGER verifica_salario
+AFTER INSERT OR UPDATE OF salario ON funcionario
+FOR EACH ROW
+BEGIN
+
+    IF (:NEW.salario < 800.00) THEN
+    
+   	 RAISE_APPLICATION_ERROR (-20011, 'Salario menor que o minimo');
+   	 
+    END IF;
+
+END;
+/
+
+
