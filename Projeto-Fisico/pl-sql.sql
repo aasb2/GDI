@@ -1,0 +1,85 @@
+
+
+--FUNÇÕES
+
+--Função que recebe o CPF do funcionário e retorna o nome dele.
+
+CREATE OR REPLACE FUNCTION retornaNome (cpf_func IN VARCHAR2)
+    RETURN VARCHAR2
+IS
+   nome_func VARCHAR2(50);
+
+BEGIN
+  SELECT nome INTO nome_func
+  FROM funcionario
+  WHERE cpf = cpf_func;
+  RETURN nome_func;
+
+END;
+/
+
+--FUNÇÃO QUE RETORNA A IDADE DE UM FUNCIONÁRIO DADO A DATA DE NASCIMENTO
+
+CREATE OR REPLACE FUNCTION IDADE (data1 IN FUNCIONARIO.DataNasc%TYPE) RETURN INT IS idadeRet INT;
+
+BEGIN 
+	idadeRet := EXTRACT(year FROM SYSDATE) - EXTRACT(year FROM data1);
+	RETURN idadeRet;
+END;
+/
+
+
+--PROCEDIMENTO
+
+--FUNCAO QUE DIMINUI O SALARIO DE UM FUNCIONARIO
+CREATE OR REPLACE PROCEDURE CORTE (valor IN FUNCIONARIO.Salario%TYPE, cpff IN  FUNCIONARIO.CPF%TYPE) IS
+
+BEGIN
+	UPDATE FUNCIONARIO
+	SET SALARIO = (SELECT F.SALARIO FROM FUNCIONARIO F WHERE F.CPF = cpff) - valor
+	WHERE CPF = cpff;
+	
+END;
+/
+
+-- FUNCAO QUE AUMENTA O SALARIO DE UM FUNCIONARIO
+CREATE OR REPLACE PROCEDURE AUMENTO (valor IN FUNCIONARIO.Salario%TYPE, cpff IN  FUNCIONARIO.CPF%TYPE) IS
+
+BEGIN
+	UPDATE FUNCIONARIO
+	SET SALARIO = (SELECT F.SALARIO FROM FUNCIONARIO F WHERE F.CPF = cpff) + valor
+	WHERE CPF = cpff;
+	
+END;
+/
+
+--TRIGGERS
+--Trigger
+
+CREATE OR REPLACE TRIGGER verifica_salario
+AFTER INSERT OR UPDATE OF salario ON funcionario
+FOR EACH ROW
+BEGIN
+
+    IF (:NEW.salario < 800.00) THEN
+    
+   	 RAISE_APPLICATION_ERROR (-20011, 'Salario menor que o minimo');
+   	 
+    END IF;
+
+END;
+/
+
+-- Verifica se a data de Inicio é menor que o prazo
+
+CREATE OR REPLACE TRIGGER verifica_data_projeto
+BEFORE INSERT OR UPDATE OR DELETE ON PROJETO
+FOR EACH ROW
+BEGIN
+	IF (:NEW.Prazo < :OLD.DataInicio ) OR (:NEW.DataInicio > :OLD.Prazo) OR (:NEW.Prazo < :NEW.DataInicio) THEN
+		RAISE_APPLICATION_ERROR(-20021, 'Data Inválida');
+	
+	
+END IF;
+END;
+/
