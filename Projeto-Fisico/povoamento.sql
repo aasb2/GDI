@@ -2,10 +2,10 @@ INSERT INTO FUNCIONARIO (ID,CPF,Nome,Salario,DataNasc,DescricaoEnd,CepEnd)
 VALUES (SQ_FUNCIONARIO.NextVal,'838.431.707-03','Black Jack',3000.00,TO_DATE('01/01/1997', 'DD/MM/YYYY'),'Rua Diadema, Bairro Itataré, Teresina-PI','64077-335');
 
 INSERT INTO FUNCIONARIO (ID,CPF,Nome,Salario,DataNasc,DescricaoEnd,CepEnd)
-VALUES (SQ_FUNCIONARIO.NextVal,'712.398.371-86','Oreki Houtaro',1500.00,TO_DATE('07/12/2001', 'DD/MM/YYYY'),'Rua Violetas, Bairro Muribeca, Jaboatão dos Guararapes-PE','54352-335');
+VALUES (SQ_FUNCIONARIO.NextVal,'712.398.371-86','Oreki Houtaro',2000.00,TO_DATE('07/12/2001', 'DD/MM/YYYY'),'Rua Violetas, Bairro Muribeca, Jaboatão dos Guararapes-PE','54352-335');
 
 INSERT INTO FUNCIONARIO (ID,CPF,Nome,Salario,DataNasc,DescricaoEnd,CepEnd)
-VALUES (SQ_FUNCIONARIO.NextVal,'718.069.923-37','Hercule Poirot',2000.00,TO_DATE('29/05/1970', 'DD/MM/YYYY'),'Rua Platina, Bairro Dois Unidos, Recife-PE','52150-250');
+VALUES (SQ_FUNCIONARIO.NextVal,'718.069.923-37','Hercule Poirot',2000.00,TO_DATE('07/12/2001', 'DD/MM/YYYY'),'Rua Platina, Bairro Dois Unidos, Recife-PE','52150-250');
 
 INSERT INTO FUNCIONARIO (ID,CPF,Nome,Salario,DataNasc,DescricaoEnd,CepEnd)
 VALUES (SQ_FUNCIONARIO.NextVal,'900.710.541-89','Eugenia Bond',1700.00,TO_DATE('12/05/1990', 'DD/MM/YYYY'),'Rua Santanópolis, Bairro COHAB, Recife-PE','51340-231');
@@ -33,7 +33,7 @@ INSERT INTO FUNCIONARIO (ID,CPF,Nome,Salario,DataNasc,DescricaoEnd,CepEnd)
 VALUES (SQ_FUNCIONARIO.NextVal,'856.074.870-91','Willian McArthur',3000.00,TO_DATE('10/05/1985', 'DD/MM/YYYY'),'Rua Governador Miguel Arraes, Bairro COHAB, Recife-PE','51340-245');
 
 INSERT INTO FUNCIONARIO (ID,CPF,Nome,Salario,DataNasc,DescricaoEnd,CepEnd)
-VALUES (SQ_FUNCIONARIO.NextVal,'485.262.180-26','Maria Fernandes',2000.00,TO_DATE('13/07/1999', 'DD/MM/YYYY'),'Rua Erval, Bairro Ipsep, Recife-PE','51350-380');
+VALUES (SQ_FUNCIONARIO.NextVal,'485.262.180-26','Maria Fernandes',2000.00,TO_DATE('07/12/2001', 'DD/MM/YYYY'),'Rua Erval, Bairro Ipsep, Recife-PE','51350-380');
 
 INSERT INTO FUNCIONARIO (ID,CPF,Nome,Salario,DataNasc,DescricaoEnd,CepEnd)
 VALUES (SQ_FUNCIONARIO.NextVal,'047.878.490-26','Maria das Neves',1500.00,TO_DATE('10/11/2000', 'DD/MM/YYYY'),'Avenida Vinte de Janeiro, Bairro Boa Viagem, Recife-PE','51030-160');
@@ -144,6 +144,12 @@ VALUES(SQ_TECNOLOGIA_LICENCIADA.NextVal,'Real Engine','A Modern Engine Writen in
 INSERT INTO TECNOLOGIA_LICENCIADA
 VALUES(SQ_TECNOLOGIA_LICENCIADA.NextVal,'Individuality','A Elegant Engine Writen in C++','Individuality Technology');
 
+INSERT INTO TECNOLOGIA_LICENCIADA
+VALUES(SQ_TECNOLOGIA_LICENCIADA.NextVal,'Impossible Engine','A Modern Engine Writen in JAVA','Fantasy');
+
+INSERT INTO TECNOLOGIA_LICENCIADA
+VALUES(SQ_TECNOLOGIA_LICENCIADA.NextVal,'Hardcore Engine','A Elegant Engine Writen in Assembly x86','Hardcore');
+
 INSERT INTO PROJETO
 VALUES(1,'Initial Drift',1500.00,'READY',TO_DATE('03/05/2018', 'DD/MM/YYYY'),TO_DATE('03/12/2018', 'DD/MM/YYYY'),7);
 
@@ -170,6 +176,10 @@ VALUES(7,'Giga Man',1500000.00,'READY',TO_DATE('09/09/2019', 'DD/MM/YYYY'),TO_DA
 INSERT INTO PROJETO
 VALUES(8,'Giga Man Pocket Edition',150000.00,'READY',TO_DATE('09/12/2019', 'DD/MM/YYYY'),TO_DATE('12/05/2021', 'DD/MM/YYYY'),10);
 
+INSERT INTO PROJETO
+VALUES(9,'Where is Waldo?',15000.00,'READY',TO_DATE('09/12/2019', 'DD/MM/YYYY'),TO_DATE('12/05/2021', 'DD/MM/YYYY'),10);
+
+
 INSERT INTO PC
 VALUES(1,'L','CORRIDA');
 
@@ -190,6 +200,10 @@ VALUES(4,'Android');
 
 INSERT INTO MOBILE
 VALUES(5,'Android');
+
+INSERT INTO MOBILE
+VALUES(9,'Android');
+
 
 INSERT INTO TAREFA
 VALUES(1,1,'Planejamento Financeiro');
@@ -236,8 +250,49 @@ VALUES(2,5,'Pesquisa de Mercado: MOBILE');
 INSERT INTO TAREFA
 VALUES(2,8,'Pesquisa de Mercado: MOBILE');
 
+INSERT INTO TAREFA
+VALUES(3,4,'Desenvolvimento do Jogo');
+
+INSERT INTO TAREFA
+VALUES(3,5,'Desenvolvimento do Jogo');
+
+INSERT INTO TAREFA
+VALUES(3,6,'Desenvolvimento do Jogo');
+
+INSERT INTO TAREFA
+VALUES(3,7,'Desenvolvimento do Jogo');
 
 
+INSERT INTO EXECUTA
+VALUES(1,1,12);
+
+INSERT INTO EXECUTA
+VALUES(1,2,13);
+
+INSERT INTO EXECUTA
+VALUES(1,3,12);
+
+
+INSERT INTO EXECUTA
+VALUES(3,4,4);
+
+INSERT INTO EXECUTA
+VALUES(3,4,5);
+
+INSERT INTO EXECUTA
+VALUES(3,4,6);
+
+INSERT INTO EXECUTA
+VALUES(3,4,7);
+
+INSERT INTO EXECUTA
+VALUES(3,5,7);
+
+INSERT INTO EXECUTA
+VALUES(3,6,7);
+
+INSERT INTO EXECUTA
+VALUES(3,7,7);
 
 INSERT INTO TRABALHA
 VALUES (1,1,TO_DATE('01/01/2017', 'DD/MM/YYYY'));
@@ -310,5 +365,22 @@ VALUES (5,3,TO_DATE('30/03/2021', 'DD/MM/YYYY'),12);
 INSERT INTO NEGOCIA
 VALUES (7,2,TO_DATE('05/02/2021', 'DD/MM/YYYY'),12);
 
+INSERT INTO USA
+VALUES (1,3,4,5);
+
+INSERT INTO USA
+VALUES (1,3,4,6);
+
+INSERT INTO USA
+VALUES (1,3,4,7);
+
+INSERT INTO USA
+VALUES (1,3,5,7);
+
+INSERT INTO USA
+VALUES (2,3,6,7);
+
+INSERT INTO USA
+VALUES (2,3,7,7);
 
 
